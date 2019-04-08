@@ -11,8 +11,20 @@
 <body>
   <div id="vue-app">
     <h1>{{ greet('Afternoon') }}</h1>
+    <a v-bind:href="website">HERE</a>
+    <p v-html="websiteTag"></p>
+    <!-- can also use just column ':' instead of 'v-bind:' -->
     <p>Name: {{ name }}</p>
     <p>{{ job }}</p>
+
+    <h2>Events - Tutorial 5</h2>
+    <button v-on:click="add(1)">Add a Year</button>
+    <button v-on:click="subtract(1)">Subtract a Year</button>
+    <button @dblclick="add(10)">Add 10 Years</button>
+    <button @dblclick="subtract(10)">Subtract 10 Years</button>
+    <p>My age is {{ age }}</p>
+
+    <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
   </div>
 
   <script src="app.js"></script>
