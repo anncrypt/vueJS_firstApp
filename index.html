@@ -59,7 +59,50 @@
     <p>Age + B = {{ addToB }}</p>
 
 
+    <h2>Dynamic CSS - Tutorial 10</h2>
+    <h3>Example 1</h3>
+    <div v-on:click="available = !available" v-bind:class="{available: available}">
+      <span>Ryu</span>
+    </div>
+    <h3>Example 2</h3>
+    <button v-on:click="nearby=!nearby">Toggle nearby</button>
+    <button v-on:click="available=!available">Toggle available</button>
+      <span>Bonjour</span>
+    <!-- </div> -->
+    
+    
+    <h2>Conditionals - Tutorial 11</h2>
+    <button v-on:click="error = !error">Toggle Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+    <p v-if="error">There has been an error</p>
+    <p v-else-if="success">Success!!</p>
+    <!-- <p v-show="error">There has been an error</p>
+    <p v-show="success">Success!!</p> -->
 
+    <!-- <span>{{ ageDataBinding }}</span> -->
+
+    <h2>Looping with v-for - Tutorial 12</h2>
+    <ul>
+      <li v-for="(char, index) in loopingChars">{{ index }} . {{ char }}</li>
+    </ul>
+
+    <ul>
+      <li v-for="(ninja, index) in loopingNinjas">{{ index }} . {{ ninja.name }} - {{ ninja.age }}</li>
+    </ul>
+
+    <!-- template helps eliminate unwanted elements on page -->
+    <template v-for="(ninja, index) in loopingNinjas">
+      <h3>{{ index }} . {{ ninja.name }}</h3>
+      <p>{{ ninja.age }}</p>
+    </template>
+    <template v-for="ninja in loopingNinjas">
+      <div v-for="(val,key) in ninja">
+        <p>{{ key }} - {{ val }}</p>
+      </div>
+    </template>
+
+ 
+    
 
   </div>
 

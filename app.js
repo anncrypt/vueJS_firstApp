@@ -22,6 +22,26 @@ new Vue({
     b: 0,
     ageForComputed: 20,
 
+
+    // Dynamic CSS - Tutorial 10
+    available: true,
+    nearby: false,
+
+
+    // Conditionals - Tutorial 11
+    error: false,
+    success: false,
+    
+
+    // Looping with v-for - Tutorial 12
+    loopingNAme: 'Jack',
+    loopingChars: ['Marie', 'Ana', 'Sasik', 'Oreo'],
+    loopingNinjas: [
+      { name: 'Ruy', age: 25 },
+      { name: 'Oreo', age: 15} ,
+      { name: 'Busa', age: 25 },
+    ]
+
   },
 
   methods: {
@@ -75,6 +95,14 @@ new Vue({
 
     addToB: function () {
       return this.b + this.ageForComputed;
+    },
+
+    // Dynamic CSS - Tutorial 10
+    compClasses: function() {
+      return {
+        available: this.available,
+        nearby: this.nearby,
+      }
     }
   }
 });
